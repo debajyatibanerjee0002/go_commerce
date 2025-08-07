@@ -1,5 +1,7 @@
 # go_commerce
+
 # phase 1 (api/v1) -> version_v1
+
 - Product add -> POST version_v1/product
 - Product read -> GET version_v1/products/:id
 - Product read all -> GET version_v1/products
@@ -7,6 +9,8 @@
 - Product delete -> DELETE version_v1/products/:id
 
 # folder structure
+
+```
 go-commerce/
 ├── cmd/
 │   └── server/
@@ -80,24 +84,30 @@ go-commerce/
 ├── go.sum
 ├── Makefile                       # Build and development commands
 └── README.md
+```
 
 The structure uses dependency injection and interfaces, making it easy to swap implementations (e.g., switching from PostgreSQL to MongoDB) without changing business logic. This approach is widely adopted in Go microservices and follows patterns used by companies like Uber, Netflix, and other tech companies using Go for e-commerce platforms.
 
 # Initialize the project
+
 go mod init go-commerce
 
 # Install common dependencies
+
 go get github.com/gin-gonic/gin
-go get github.com/lib/pq  # PostgreSQL driver
+go get github.com/lib/pq # PostgreSQL driver
 go get github.com/golang-migrate/migrate/v4
-go get github.com/joho/godotenv  # Environment variables
-go get github.com/google/uuid    # UUID generation
+go get github.com/joho/godotenv # Environment variables
+go get github.com/google/uuid # UUID generation
 
 # Run the application
+
 make run
 
 # Run tests
+
 make test
 
 # Database migration
+
 make migrate-up
